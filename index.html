@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {    
+            background-color: black;
+        }
+        #effect{
+            color: azure;
+        }
+        #fr{
+            display: flex;
+            justify-content:center;
+            align-items: center;   
+            color: rgb(255, 255, 255);
+            background-color: chocolate;
+            margin-left: 500px;
+            margin-right: 500px;
+        }
+        #im{
+            display: block;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <img src="welcome.gif" id="im">
+    <h1 style="font-family:cursive; color:azure">About you</h1>
+    <p id="effect"></p>
+    <form id="fr">
+        <table>
+       <tr>
+        <td>
+            <label>Name: </label>
+            <input type="text" name="name" placeholder="First name" required style="color: azure;">
+            <input type="text" name="name" placeholder="Last name" style="color: azure;">
+        </td>
+       </tr> 
+       <tr>
+        <td>
+            <label>Gender: </label>
+            <input type="radio" name="gender" required>Male
+            <input type="radio" name="gender">Female
+            <input type="radio" name="gender">others
+        </td>
+       </tr>
+       <tr>
+        <td>
+            <label>mail: </label>
+            <input type="email" name="mail" placeholder="Enter your Email" required style="color: azure;">
+        </td>
+       </tr>
+       <tr>
+        <td>
+            <label>phone number: </label>
+            <input type="tel" pattern="[0-9]{10}" placeholder="Mobile number" required style="color: azure;">
+        </td>
+       </tr>
+       <tr>
+        <td>
+            <label>Reason for communication: </label>
+            <textarea placeholder="Write here" style="color: azure;"></textarea>
+        </td>
+       </tr>
+       <tr>
+        <td>
+            <input type="submit"> 
+            <input type="reset" value="clear">
+        </td>
+       </tr>
+    </table>
+    </form>
+    <script>
+        const txt= "This page is about your detail's so we are able to know whom we are communicating with :-)";
+        let index = 0;
+        function writer(){
+            if(index< txt.length){
+                document.getElementById("effect").innerHTML += txt.charAt(index);
+                index++;
+                setTimeout(writer,70);
+            }
+        }
+        writer(); 
+    </script>
+</body>
+</html>
